@@ -38,7 +38,7 @@ See [QUICK_START.md](QUICK_START.md) for installation and running instructions.
 
 **TL;DR:**
 ```bash
-python3 app.py
+./start.sh
 ```
 Then visit: http://127.0.0.1:5001
 
