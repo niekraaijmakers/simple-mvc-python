@@ -1,0 +1,97 @@
+SIMPLE FLASK MVC CAR MANAGEMENT SYSTEM
+=====================================
+
+FINAL PROJECT STRUCTURE
+========================
+
+simple-mvc/
+│
+├── app.py                          ← Flask application setup
+├── requirements.txt                ← Dependencies (Flask, SQLAlchemy)
+├── start.sh                        ← Quick start script
+│
+├── model/                          📦 DOMAIN LAYER
+│   ├── car.py                     ← Car entity (pure data)
+│   └── repository/
+│       ├── car_repository.py      ← Data access + business logic
+│       └── instance/
+│           └── cars.db            ← SQLite database
+│
+├── controller/                     🎮 HTTP LAYER
+│   └── car_controller.py          ← Routes & request handling
+│
+└── view/                           🎨 PRESENTATION LAYER
+    ├── base.html                  ← Templates
+    ├── index.html
+    ├── show_car.html
+    ├── new_car.html
+    ├── edit_car.html
+    └── static/                    ← Grouped with templates
+        └── css/
+            ├── main.css           ← Base styles
+            ├── tables.css         ← Table styles
+            ├── forms.css          ← Form styles
+            └── details.css        ← Detail styles
+
+ARCHITECTURE FLOW
+=================
+
+Browser → Controller → Repository → Model → Database
+            ↓
+          View (HTML + CSS)
+
+KEY FEATURES
+============
+
+✅ Repository Pattern (clean data access)
+✅ Explicit database queries (no "magic")
+✅ Pure data models (no business logic)
+✅ Thin controllers (just HTTP handling)
+✅ Separated CSS from HTML
+✅ All view assets grouped in view/
+✅ Clean, intuitive structure
+
+DOCUMENTATION
+=============
+
+Start Here:
+- README.md              ← Main documentation
+- QUICK_START.md         ← Get running fast
+
+Learn Architecture:
+- FINAL_STRUCTURE.md     ← Detailed architecture
+- DATABASE_GUIDE.md      ← Database operations explained
+
+RUN THE APP
+===========
+
+cd /Users/raaijmak/workspace/interns/simple-mvc
+python app.py
+
+Then visit: http://127.0.0.1:5001
+
+PERFECT FOR TEACHING INTERNS! 🎓
+
+Why This Structure?
+===================
+
+1. EXPLICIT DATABASE OPERATIONS
+   - Uses db.session.query(Car) instead of Car.query
+   - Shows exactly what's happening
+   - SQL comments explain each operation
+   - No "magic" to confuse beginners
+
+2. LOGICAL GROUPING
+   - model/ = All data-related code
+   - controller/ = All HTTP handling
+   - view/ = All presentation (HTML + CSS)
+
+3. REPOSITORY PATTERN
+   - Separates data access from HTTP
+   - Business logic in one place
+   - Easy to test and maintain
+
+4. TEACHING FOCUSED
+   - Clarity over brevity
+   - Explicit over magic
+   - Understanding over efficiency

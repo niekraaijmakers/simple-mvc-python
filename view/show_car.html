@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}{{ car.year }} {{ car.make }} {{ car.model }}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1>🚗 Car Details</h1>
+
+<div class="detail-card">
+    <div class="detail-row">
+        <strong class="detail-label">ID:</strong>
+        <span class="detail-value">{{ car.id }}</span>
+    </div>
+    
+    <div class="detail-row">
+        <strong class="detail-label">Make:</strong>
+        <span class="detail-value">{{ car.make }}</span>
+    </div>
+    
+    <div class="detail-row">
+        <strong class="detail-label">Model:</strong>
+        <span class="detail-value">{{ car.model }}</span>
+    </div>
+    
+    <div class="detail-row">
+        <strong class="detail-label">Year:</strong>
+        <span class="detail-value">{{ car.year }}</span>
+    </div>
+    
+    <div class="detail-row">
+        <strong class="detail-label">Color:</strong>
+        <span class="detail-value">
+            <span class="color-badge" style="background: {{ car.color }};">
+                {{ car.color }}
+            </span>
+        </span>
+    </div>
+    
+    <div class="detail-row">
+        <strong class="detail-label">Price:</strong>
+        <span class="detail-value price">${{ "%.2f"|format(car.price) }}</span>
+    </div>
+    
+    <div class="detail-actions">
+        <a href="{{ url_for('car.edit_car', id=car.id) }}" class="btn btn-secondary btn-large">Edit</a>
+        <form action="{{ url_for('car.delete_car', id=car.id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this car?');">
+            <button type="submit" class="btn btn-danger btn-large">Delete</button>
+        </form>
+        <a href="{{ url_for('car.index') }}" class="btn btn-large">Back to List</a>
+    </div>
+</div>
+{% endblock %}

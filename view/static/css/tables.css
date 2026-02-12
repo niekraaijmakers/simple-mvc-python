@@ -1,0 +1,56 @@
+/* Table Styles - For car listings */
+
+.car-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.car-table thead tr {
+    background: #667eea;
+    color: white;
+}
+
+.car-table th {
+    padding: 12px;
+    text-align: left;
+}
+
+.car-table th.center {
+    text-align: center;
+}
+
+.car-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.car-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.car-table td {
+    padding: 12px;
+}
+
+.car-table td.center {
+    text-align: center;
+}
+
+/* Color Badge */
+.color-badge {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* Action Buttons in Table */
+.car-table .btn {
+    margin: 2px;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.car-table form {
+    display: inline;
+}

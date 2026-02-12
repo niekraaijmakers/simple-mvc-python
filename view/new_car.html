@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Add New Car{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1>➕ Add New Car</h1>
+
+<form action="{{ url_for('car.create_car') }}" method="POST" class="form-container">
+    <div class="form-group">
+        <label for="make">Make:</label>
+        <input type="text" id="make" name="make" class="form-control" required placeholder="e.g., Toyota">
+    </div>
+    
+    <div class="form-group">
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" class="form-control" required placeholder="e.g., Camry">
+    </div>
+    
+    <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" class="form-control" required min="1900" max="2026" placeholder="e.g., 2024">
+    </div>
+    
+    <div class="form-group">
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" class="form-control" required placeholder="e.g., Red">
+    </div>
+    
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" class="form-control" required step="0.01" min="0" placeholder="e.g., 25000.00">
+    </div>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn btn-large">Add Car</button>
+        <a href="{{ url_for('car.index') }}" class="btn btn-secondary btn-large">Cancel</a>
+    </div>
+</form>
+{% endblock %}

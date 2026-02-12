@@ -1,0 +1,46 @@
+/* Detail View Styles - For showing individual car details */
+
+.detail-card {
+    max-width: 600px;
+    margin: 30px auto;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.detail-row {
+    margin-bottom: 20px;
+}
+
+.detail-label {
+    color: #667eea;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.detail-value {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.detail-value.price {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.detail-value .color-badge {
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.detail-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.detail-actions form {
+    display: inline;
+    margin-left: 10px;
+}
